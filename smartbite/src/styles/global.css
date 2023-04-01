@@ -1,0 +1,63 @@
+* {
+    font-family: "Cambria", sans-serif !important;
+    --primary-color: #F4F1DE;
+    --secondary-color: #E07A5F;
+    --third-color: #3D405B;
+    --fourth-color: #81B29A;
+    --fifth-color: #F2CC8F;
+}
+
+.container-main {
+    height: 100% !important;
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+.navbar {
+    background-color: var(--fourth-color) !important;
+}
+
+.logo {
+    text-decoration: none;
+}
+
+.logo:hover {
+    color: var(--primary-color);
+    cursor: pointer;
+}
+
+.logo-img {
+    max-height: 100px;
+}
+
+.logo-text {
+    padding-left: 5px;
+    font-size: x-large;
+    background: black;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+
+.footer {
+    background-color: var(--secondary-color) !important;
+    height: 40px !important;
+    font-size: large !important;
+}
+
+.button-primary {
+    font-size: x-large !important;
+    font-weight: bold !important;
+    color: white !important;
+    border-color: var(--primary-color) !important;
+    background-color: var(--primary-color) !important;
+    padding: 10px 20px 10px 20px !important;
+}
+
+.button-primary:hover, .button-primary:focus, .button-primary:disabled {
+    color: white !important;
+    border-color: var(--primary-color) !important;
+    background-color: var(--primary-color) !important;
+    transition: 0.3s !important;
+    transform: scale(1.1) !important;
+}
