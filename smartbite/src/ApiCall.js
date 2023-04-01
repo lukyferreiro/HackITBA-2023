@@ -1,6 +1,7 @@
 require('dotenv').config();
-
-async function fetchData(prompt) {
+import fs from "fs"
+const fetchData = async(prompt) => {
+  try{
   const openaiApiKey = process.env.REACT_APP_OPENAI_API_KEY;
   const response = await fetch('https://api.openai.com/v1/chat', {
     method: 'POST',
@@ -26,9 +27,11 @@ async function fetchData(prompt) {
     })
   });
   const data = await response.json();
-  
   return data;
-}
+  }catch (error){
+    console.log(error);
+  }
+};
 
 const fetchImg = async (prompt) => {
   try {
