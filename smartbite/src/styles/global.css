@@ -61,3 +61,16 @@
     transition: 0.3s !important;
     transform: scale(1.1) !important;
 }
+
+.cross-btn {
+    border: none;
+    background-color: #ff0000;
+    border-radius: 50%;
+    padding: 8px;
+    cursor: pointer;
+}
+
+.cross-icon {
+    color: #ffffff;
+}
+  
