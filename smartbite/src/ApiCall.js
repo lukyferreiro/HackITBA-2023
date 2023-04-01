@@ -1,8 +1,6 @@
-require('dotenv').config();
-import fs from "fs"
-const fetchData = async(prompt) => {
+export const fetchData = async(prompt) => {
   try{
-  const openaiApiKey = process.env.REACT_APP_OPENAI_API_KEY;
+  const openaiApiKey = "UOeUC3yKSWH1a5ZzbPUQT3BlbkFJsKeLwhKifrP5sn4S7YfA";
   const response = await fetch('https://api.openai.com/v1/chat', {
     method: 'POST',
     headers: {
@@ -21,7 +19,7 @@ const fetchData = async(prompt) => {
       "top_p": 1,
       "n": 1,
       "stream": false,
-      "max_tokens": 250,
+      "max_tokens": 3000,
       "presence_penalty": 0,
       "frequency_penalty": 0
     })
@@ -35,7 +33,7 @@ const fetchData = async(prompt) => {
 
 const fetchImg = async (prompt) => {
   try {
-    const apiKey = process.env.REACT_APP_OPENAI_API_KEY;
+    const apiKey = "UOeUC3yKSWH1a5ZzbPUQT3BlbkFJsKeLwhKifrP5sn4S7YfA";
     const response = await fetch(`https://api.openai.com/v1/images/generations`, {
       method: 'POST',
       headers: {
@@ -56,3 +54,4 @@ const fetchImg = async (prompt) => {
     console.log(error);
   }
 };
+export{fetchImg}

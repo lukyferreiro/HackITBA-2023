@@ -4,6 +4,7 @@ import App from './App';
 import './index.css';
 import "./styles/global.css";
 import "./styles/form.css";
+import "./styles/cardRecipe.css"; 
 
 // Bootstrap CSS
 import "bootstrap/dist/css/bootstrap.min.css";

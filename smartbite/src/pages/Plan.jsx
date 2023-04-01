@@ -1,6 +1,7 @@
 import {useEffect} from "react"
 import QuestionaryModal from "../components/QuestionaryModal"
 
+
 export default function Plan() {
 
     useEffect(() => {

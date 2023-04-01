@@ -1,0 +1,32 @@
+.card-receipe {
+    width: 200px !important;
+    height: 300px !important;
+}
+
+
+.card-link {
+    text-decoration: none !important;
+    color: black !important;
+}
+
+.card-img-top {
+    width: 100% !important;
+    height: 200px !important;
+    /*object-fit: cover;*/
+}
+
+.experience.card-title:hover {
+    color: black !important;
+    text-decoration: underline !important;
+    font-weight: bold;
+    cursor: pointer !important;
+}
+
+.title-link a {
+    color: black !important;
+    text-decoration: none !important;
+}
+
+.table-title {
+    font-weight: bold !important;
+}

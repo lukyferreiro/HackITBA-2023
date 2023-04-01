@@ -1,13 +1,19 @@
 
 import {useForm} from "react-hook-form";
 import data from '../store/data';
+import { fetchData } from "../ApiCall";
+import { useNavigate } from 'react-router-dom';
+
 
 export default function QuestionaryModal() {
     
+    const navigate = useNavigate()
     const {register, handleSubmit}= useForm({criteriaMode: "all"})
     
     const onSubmit = handleSubmit((data) => {
-        
+        // fetchData(data)
+        console.log(data)
+        navigate("/completado", {state: {data}, replace: true})
     })
 
     return (
