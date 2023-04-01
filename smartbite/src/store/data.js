@@ -1,11 +1,11 @@
 const data = [
-    { id: 1, question: 'Longitud del plan', options: ,  },
-    { id: 2, question: 'Cantidad de comensales', price: 14.99 },
-    { id: 3, question: '', options: ,  },
-    { id: 4, question: 'Tiene alergias o alguna problematica de salud ', price: 9.99 },
-    { id: 5, question: 'Cuanto tiempo tiene disponible ', price: 9.99 },
-    { id: 6, question: 'Cual es su objetivo principal ', price: 9.99 },
-    { id: 7, question: 'Alguna  ', price: 9.99 },
+    { id: '0', question: 'Longitud del plan', options: ['7 dias', '15 dias', '30 dias'] , free: true },
+    { id: '1', question: 'Cantidad de comensales', options: null , free: true},
+    { id: '2', question: 'Es usted vegano,vegetariano o keto',options: ['vegano', 'vegetariano', 'keto'] , free: false},
+    { id: '3', question: 'Tiene alergias', options: null , free: true },
+    { id: '4', question: 'Tiene alguna problematica de salud ', options: null , free: true },
+    { id: '5', question: 'Tiene 40 minutos libres para cocinar', options: ['si', 'no', 'keto'] , free: false },
+    { id: '6', question: 'Alguna condicion especial  ', options: null , free: true },
   ];
   
-  export default data;
+export default data;

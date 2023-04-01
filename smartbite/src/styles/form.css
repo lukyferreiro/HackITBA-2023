@@ -1,0 +1,26 @@
+.btn-submit-form {
+    font-size: x-large !important;
+    font-weight: bold !important;
+    color: white !important;
+    border-color: var(--third-color) !important;
+    background-color: var(--third-color) !important;
+}
+
+.btn-submit-form:hover, .btn-submit-form:focus {
+    color: white !important;
+    border-color: var(--third-color) !important;
+    background-color: var(--third-color) !important;
+    transform: scale(1.02) !important;
+    transition: 0.3s !important;
+}
+
+.btn-submit-form:disabled {
+    color: white !important;
+    border-color: var(--third-color) !important;
+    background-color: var(--third-color) !important;
+}
+
+.form-control:focus, .form-control:active {
+    border-color: var(--primary-color) !important;
+    box-shadow: none !important;
+}
