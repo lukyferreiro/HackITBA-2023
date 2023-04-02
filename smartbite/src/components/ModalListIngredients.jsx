@@ -1,9 +1,13 @@
 import Modal from "react-modal";
 import React from "react";
+import { useEffect } from "react";
 
 
 export default function ModalListIngredients(props) {
-        
+        useEffect(()=>{
+        console.log("COMRPAS")
+        console.log(props.compras)
+        },[])
     return (
         <Modal style={{overlay: {zIndex: 100}}}
                className="modal-pop-up"
@@ -21,11 +25,12 @@ export default function ModalListIngredients(props) {
                         </h5>
                         <div className=" d-flex justify-content-center">
                             <ul className="d-flex flex-column justify-content-right">
-                                {props.compras.ingredientes.map((ingrediente) => (
+                                {props.compras !==undefined &&
+                                (props.compras.map((ingrediente) => (
                                     <li style={{fontSize: "large"}}>
-                                        {ingrediente.cantidad} - {ingrediente.nombre} de {ingrediente.unidad}
+                                        {ingrediente.cantidad} - {ingrediente.unidad} de {ingrediente.nombre}
                                     </li>
-                                ))}
+                                )))}
                             </ul>
                         </div>
                     </div>

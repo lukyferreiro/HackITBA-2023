@@ -5,6 +5,7 @@ import { useState } from "react"
 import recipeList from "../store/recipes"
 import ModalListIngredients from "../components/ModalListIngredients"
 import image from "../img/background.png"; 
+import { useEffect } from "react"
 
 export default function PlanCompleted() {
 
@@ -12,10 +13,30 @@ export default function PlanCompleted() {
     const {data} = location.state
     const isOpenModalPrice = useState(false);
 
-    //const recipeList = getRecipe(data)
-    const [comidas, setComidas] = useState({})
+    const [comidas, setComidas] = useState([])
+    const [compras,setCompras]=useState([])
+    const[gotPlans,isGotPlans]=useState(false)
+    const [change,isChange]=useState(true)
+    useEffect(() => {
+        if(!gotPlans)
+            getMealPlan('mani','vegan')
+        
+    }, [],compras);
+
+    useEffect(()=>{
+        if (comidas)
+            comidas.forEach(comida => {
+            let customFood=photoPrompt.replace('[food]',comida.nombre)
+            // fetchImg(customFood).then(
+            //     data => {
+            //         comida.url=data.data[0].url
+            //         console.log(comida.url)
+            //     })
+        });
+    },[change])
+      
     const photoPrompt=`Genera una foto realista de un plato de [food],buena iluminacion,jugoso`
-    const mealPlanPrompt=`Generar planes de cenas deliciosos y bajos en calorias para personas [vegetarian] con sobrepeso que quieren reducir peso, basados en sus preferencias.\n\n  Preferencias del usuario:\n\n  - Desagrados: [desagrados]\n  - Comidas previamente desaprobadas:\n  \n  Generar un plan de cenas para 7 días, incluyendo una variedad de comidas deliciosas, jugosas y bajas en calorías. Evitar sugerir comidas que el usuario no ha disfrutado en el pasado. El plan de comidas debe ser diverso, incluir múltiples grupos alimentarios y proporcionar al usuario una dieta equilibrada.\n  \n  Si alguna de las comidas es seca, como una ensalada, arroz o quinoa se incluirá en el nombre de la comida una salsa o aderezo delicioso.\n  \n  El resultado se devolverá como un objeto JSON llamado comida que contiene una lista de comidas, cada una con un atributo \"nombre\" y un atributo \"tiempo\" que indica el tiempo aproximado que tomara preparar la comida en minutos.`
+    const mealPlanPrompt=`Generar planes de cenas deliciosos y bajos en calorias para personas con sobrepeso que quieren reducir peso.\n\n    \n  Generar un plan de cenas para 7 días, incluyendo una variedad de comidas deliciosas, jugosas y bajas en calorías. Evitar sugerir comidas que el usuario no ha disfrutado en el pasado. El plan de comidas debe ser diverso, incluir múltiples grupos alimentarios y proporcionar al usuario una dieta equilibrada.\n  \n  Si alguna de las comidas es seca, como una ensalada, arroz o quinoa se incluirá en el nombre de la comida una salsa o aderezo delicioso.\n  \n  La respuesta solo sera un objeto json  con dos objetos dentro, uno llamado comida que contiene una lista de comidas, cada una con un atributo \"nombre\", un atributo \"tiempo\" que indica el tiempo aproximado que tomara preparar la comida en minutos , un atributo "dia" que indica para que dia de la semana esta pensado ese plato, del 1 al 7 y un atributo url vacio. El otro objeto se llamara compras y tendra un arreglo con ingredientes necesarios para las comidas sugeridas. Cada ingrediente tendra un atributo llamado "nombre" otro llamado "unidad" con gramos,mililitros,unidades,etc y otro atributo llamado cantidad`
     const modifyPlanPrompt=`Modificar plan de comidas:
 
     Plan de comidas actual:[plan de comidas]
@@ -40,7 +61,12 @@ export default function PlanCompleted() {
             const jsonStr = message.substring(start, end + 1);
 
             // Parse the JSON string into an object
-            setComidas(JSON.parse(jsonStr));
+            const array=(JSON.parse(jsonStr));
+            setComidas(array.comida)
+            setCompras(array.compras)
+            console.log(array.compras)
+            isChange(!change)
+            isGotPlans(true)
         })
         
     }
@@ -65,29 +91,28 @@ export default function PlanCompleted() {
             const jsonStr = message.substring(start, end + 1);
 
             // Parse the JSON string into an object
-            setComidas(JSON.parse(jsonStr));
+            const obj=JSON.parse(jsonStr)
+            setComidas(obj.comida)
         })
     }
 
-    const [recipes, setRecipes] = useState(recipeList);
-
-    function removeRecipe(removedRecipe) {
-        setRecipes({recipes: recipes.filter(function(reciepe) { 
-            return reciepe !== removedRecipe
-        })});
-    }
+    // function removeRecipe(removedRecipe) {
+    //     setRecipes({recipes: recipes.filter(function(reciepe) { 
+    //         return reciepe !== removedRecipe
+    //     })});
+    // }
 
 
-    function alterRecipe(removedRecipe,index){
+    // function alterRecipe(removedRecipe,index){
         
-        removeRecipe(removedRecipe)
-        const newRecipe = modifyMealPlan(data,index,recipes)
-        console.log( "Nueva receta: ")
-        console.log(newRecipe)
-        setRecipes(previousState => ({
-            recipes: [...previousState.recipes, newRecipe]
-        }))
-    }
+    //     removeRecipe(removedRecipe)
+    //     const newRecipe = modifyMealPlan(data,index,recipes)
+    //     console.log( "Nueva receta: ")
+    //     console.log(newRecipe)
+    //     setRecipes(previousState => ({
+    //         recipes: [...previousState.recipes, newRecipe]
+    //     }))
+    // }
          
     return (
         <div style={{
@@ -97,17 +122,22 @@ export default function PlanCompleted() {
             height: '100vh',
         }}>
             <div className="d-flex justify-content-end mx-2">
+                {comidas && comidas.length>0 &&(
                 <button type="button" className="btn button-primary"
                         onClick={() => {isOpenModalPrice[1](true)}}>
                     Generar lista de ingredientes 
-                </button>
+                </button>)}
             </div>
             <div className="m-5 d-flex flex-wrap justify-content-center">
-                {recipeList.map((recipe,index) => (
-                    <CardRecipe recipe={recipe} alterRecipeFun={() => alterRecipe(recipe, index)}/>
-                ))}
+                
+                {comidas && comidas.length>0 &&(
+                comidas.map((recipe) => (
+                    <CardRecipe recipe={recipe} key={recipe.dia} />
+                )))}
+                {comidas && comidas.length>0 &&(
+                    <ModalListIngredients isOpen={isOpenModalPrice} compras={compras}/>
+                )}
             </div>
-            <ModalListIngredients isOpen={isOpenModalPrice} compras={/*TODO *//}/>
         </div>
         
     )
