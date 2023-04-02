@@ -20,7 +20,6 @@ export default function ModalRecipe(props) {
        - "cantidad": cantidad de unidades de medida necesarios para la receta`
     useEffect(()=>{
         if(!gotReceta)
-            console.log("EN GOTRECETA")
             getReceta(props.recipe.nombre)
     },[])
     const getReceta=(nombre)=>{

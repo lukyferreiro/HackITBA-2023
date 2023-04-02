@@ -11,17 +11,13 @@ export default function RecetasRapidas() {
     const location = useLocation()
     const {data} = location.state
 
-    const [comidas,setComidas]=useState({})
-    const fastRecipePrompt=`Generar una receta paso por paso con ingredientes especificos.
-
-    Ingrese una lista de ingredientes: [lista de ingredientes]
-    
-    Generar una receta deliciosa y baja en calorias que utilice los ingredientes proporcionados. Ignorar ingredientes sin sentido o que no sirven para cocinar o no son comestibles. En la receta, no incluya instrucciones sobre precalentar el horno. En las instrucciones que indiquen hornear algun ingrediente, incluir la temperatura en grados Celsius.
-    
-    El resultado se devolvera como un objeto JSON que contiene un objeto "receta" con un arreglo de strings con las instrucciones.`
-
+    const [recipe,setRecipe]=useState([])
+    const fastRecipePrompt=`Generar instrucciones detalladas para preparar un plato con una lista de ingredientes dada. El plato debe contener al menos uno de los ingredientes proporcionados. Las instrucciones deben ser detalladas y fáciles de seguir, y no deben incluir instrucciones sobre precalentar el horno. Si el plato requiere hornear algún ingrediente, incluir la temperatura en grados Celsius. La respuesta será un objeto JSON con un objeto llamado "receta" que contendrá una lista de cadenas con las instrucciones paso por paso.
+        La respuesta solo sera un archivo json llamado comida que tendra dentro dos objetos, uno llamado instrucciones que es un array de strings con las instrucciones paso a paso, y el otro llamado nombre con el nombre del plato
+    Por favor ingresa una lista de ingredientes separados por comas:[lista de ingredientes]`
 
     //TODO hacer que tambien reciba data.cantRecipes
+    const previous=[]
     const getFastRecipe = (ingredientsList)=>{
         const customRecipe=fastRecipePrompt.replace('[lista de ingredientes]',ingredientsList)
         fetchData(customRecipe)
@@ -34,7 +30,10 @@ export default function RecetasRapidas() {
             const jsonStr = message.substring(start, end + 1);
 
             // Parse the JSON string into an object
-            setComidas(JSON.parse(jsonStr));
+            const array=JSON.parse(jsonStr);
+            setRecipe(array.receta.instrucciones)
+            previous.push(array.receta.nombre)
+
         })
     }
 
@@ -52,9 +51,9 @@ export default function RecetasRapidas() {
             overflowY: "auto"
         }}>
             <div className="m-5 d-flex flex-wrap justify-content-center">
-                {recipeList.map((recipe) => (
+                {recipe.length>0 &&(
                     <CardRecipe recipe={recipe} />
-                ))}
+                )}
             </div>
         </div>
     )
