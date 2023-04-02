@@ -1,6 +1,8 @@
+import recipeList from '../store/recipes'
+
 export const fetchData = async(prompt) => {
   try{
-  const openaiApiKey = "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";
+  const openaiApiKey = process.env.CHATGPT_AI_KEY;
   const response = await fetch('https://api.openai.com/v1/chat/completions', {
     method: 'POST',
     headers: {
@@ -28,12 +30,13 @@ export const fetchData = async(prompt) => {
   return data;
   }catch (error){
     console.log(error);
+    return recipeList
   }
 };
 
 const fetchImg = async (prompt) => {
   try {
-    const apiKey = "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";
+    const apiKey = process.env.CHATGPT_AI_KEY;
     const response = await fetch(`https://api.openai.com/v1/images/generations`, {
       method: 'POST',
       headers: {
@@ -52,6 +55,7 @@ const fetchImg = async (prompt) => {
     return data;
   } catch (error) {
     console.log(error);
+    return recipeList
   }
 };
 export{fetchImg}
