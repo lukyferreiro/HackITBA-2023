@@ -3,6 +3,7 @@ import { useState } from "react"
 import { fetchData } from "../ApiCall"
 
 export default function RecetasRapidas() {
+    
     const [comidas,setComidas]=useState({})
     const fastRecipePrompt=`Generar una receta paso por paso con ingredientes especificos.
 
