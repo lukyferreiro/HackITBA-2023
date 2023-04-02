@@ -1,6 +1,5 @@
 const data = [
-    { id: '0', question: 'Cantidad de comensales', options: null , free: true },
-    { id: '1', question: 'Es usted vegano,vegetariano o keto',options: ['Vegano', 'Vegetariano'] , free: false},
+    { id: '1', question: 'Es usted vegano,vegetariano o keto',options: ['No','Vegano', 'Vegetariano','Keto'] , free: false},
     { id: '2', question: 'Sos alergico al mani', options: ['Si','No'] , free: false },
     { id: '3', question: 'Sos alergico a los mariscos', options: ['Si','No'] , free: false },
     { id: '4', question: 'Sos alergico a los lacteos', options: ['Si','No'] , free: false },
