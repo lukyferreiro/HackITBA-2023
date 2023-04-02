@@ -36,7 +36,7 @@ export default function ModalFastRecipes(props) {
                         </div>
                         
                         <div className="col-12">
-                            <h2 className="text-center title">
+                            <h2 className="text-center title mt-3">
                                 Ingredientes
                             </h2>
                             <p className="text-center">

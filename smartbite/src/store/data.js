@@ -10,5 +10,30 @@ const data = [
     { id: '8', question: 'Alguna condicion especial  ', options: null , free: true },
   ];
 
+const days_equiv = [
+  {
+    id: 0, day: 'lunes'
+  },
+  {
+    id: 1, day: 'martes'
+  },
+  {
+    id: 2, day: 'miercoles'
+  },
+  {
+    id: 3, day: 'jueves'
+  },
+  {
+    id: 4, day: 'viernes'
+  },
+  {
+    id: 5, day: 'sabado'
+  },
+  {
+    id: 6, day: 'domingo'
+  }
 
-export default data;
+]
+
+const misConst= {data, days_equiv}
+export default misConst;

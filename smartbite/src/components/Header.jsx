@@ -14,7 +14,7 @@ export default function Navbar() {
                 </Link>
                 <div className="container-navbar-buttons d-flex justify-content-between align-items-center">
                     <h2 className="text-center px-5" style={{fontSize: "x-large"}}>
-                        Bienvenido Usuario :)
+                        Bienvenido Factory Team
                     </h2>
                 </div>
             </div>

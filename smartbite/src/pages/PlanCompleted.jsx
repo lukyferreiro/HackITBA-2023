@@ -94,7 +94,8 @@ export default function PlanCompleted() {
             backgroundImage:`url(${image})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
-            height: '100vh',
+            flex: "1",
+            overflowY: "auto"
         }}>
             <div className="d-flex justify-content-end mx-2">
                 <button type="button" className="btn button-primary"
@@ -107,7 +108,7 @@ export default function PlanCompleted() {
                     <CardRecipe recipe={recipe} alterRecipeFun={() => alterRecipe(recipe, index)}/>
                 ))}
             </div>
-            <ModalListIngredients isOpen={isOpenModalPrice} compras={/*TODO *//}/>
+            <ModalListIngredients isOpen={isOpenModalPrice} />
         </div>
         
     )

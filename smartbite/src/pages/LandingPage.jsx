@@ -12,7 +12,8 @@ export default function LandingPage() {
             backgroundImage:`url(${image})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
-            height: '100vh',
+            flex: "1",
+            overflowY: "auto"
         }}>
             <div className="m-5 p-5 d-flex flex-column justify-content-center text-center" style={{flex: "1"}}>
                 <div className="d-flex justify-content-center align-content-center">
