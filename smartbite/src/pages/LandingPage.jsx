@@ -2,10 +2,12 @@ import {Link} from 'react-router-dom'
 import { useState } from "react";
 import ModalFastRecipes from "../components/ModalFastRecipes";
 import image from "../img/background.png"; 
+import ModalPlan from '../components/ModalPlan';
 
 export default function LandingPage() {
 
-    const isOpenModal = useState(false);
+    const isOpenModalPlan = useState(false);
+    const isOpenModalFastRecipes = useState(false);
 
     return (
         <div className="d-flex justify-content-around align-items-stretch" style={{
@@ -26,11 +28,10 @@ export default function LandingPage() {
                     Podes pedir un plan de 7 dias, 15 dias o un mes
                 </div>
                 <div className="mt-5 d-flex justify-content-center">
-                    <Link to="/plan">
-                        <button type="button" className="btn button-primary">
-                            Crear plan
-                        </button>
-                    </Link>
+                    <button type="button" className="btn button-primary"
+                        onClick={() => {isOpenModalPlan[1](true)}}>
+                        Crear plan
+                    </button>
                 </div>
             </div>
 
@@ -47,13 +48,14 @@ export default function LandingPage() {
                 </div>
                 <div className="mt-5 d-flex justify-content-center">
                     <button type="button" className="btn button-primary"
-                            onClick={() => {isOpenModal[1](true)}}>
+                            onClick={() => {isOpenModalFastRecipes[1](true)}}>
                         Obtener receta
                     </button>
                 </div>
             </div>
 
-            <ModalFastRecipes isOpen={isOpenModal}/>
+            <ModalPlan isOpen={isOpenModalPlan}/>
+            <ModalFastRecipes isOpen={isOpenModalFastRecipes}/>
 
         </div>
     )

@@ -8,13 +8,13 @@ de obesidad a nivel mundial aumentan exponencialemnte, y actualmente mas de
 
 Esto por esto que surge SmartBite, una aplicacion web encargada de dos funcionalidades
 principales:
--Generar N recetas con los ingredientes que el usuario ingrese en la aplicacion
--Generar un plan de alimentacion personalizado segun ciertas preguntas base al usuario.
+- Generar N recetas con los ingredientes que el usuario ingrese en la aplicacion
+- Generar un plan de alimentacion personalizado segun ciertas preguntas base al usuario.
 
 ### Tecnologias y versiones requeridas
 
--Node.js v18.15.0
--npm 9.5.0
+- Node.js v18.15.0
+- npm 9.5.0
 
 ### Ejecucion
 
