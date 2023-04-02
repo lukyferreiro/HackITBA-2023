@@ -5,6 +5,7 @@ import './index.css';
 import "./styles/global.css";
 import "./styles/form.css";
 import "./styles/cardRecipe.css"; 
+import "./styles/modalRecipe.css"; 
 
 // Bootstrap CSS
 import "bootstrap/dist/css/bootstrap.min.css";

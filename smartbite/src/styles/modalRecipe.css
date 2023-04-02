@@ -1,0 +1,27 @@
+.modal-pop-up {
+    width: 50%;
+    border-radius: 20px;
+    border: 1px solid var(--fifth-color);
+    background-color: whitesmoke;
+    margin: 2.5% 25%;
+    max-height: 90vh;
+    overflow-x: auto;
+}
+
+.img-modal {
+    width: 200px !important;
+    height: 200px !important;
+    object-fit: cover;
+}
+
+.title {
+    font-size: xx-large !important;
+    font-weight: 500 !important;
+    text-decoration: underline;
+}
+
+.subtitle {
+    font-size: x-large !important;
+    font-weight: 600 !important;
+    text-decoration: underline;
+}

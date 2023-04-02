@@ -1,32 +1,19 @@
 .card-receipe {
     width: 200px !important;
-    height: 300px !important;
-}
-
-
-.card-link {
-    text-decoration: none !important;
-    color: black !important;
+    height: 320px !important;
 }
 
 .card-img-top {
     width: 100% !important;
     height: 200px !important;
-    /*object-fit: cover;*/
 }
 
-.experience.card-title:hover {
-    color: black !important;
-    text-decoration: underline !important;
-    font-weight: bold;
-    cursor: pointer !important;
-}
-
-.title-link a {
-    color: black !important;
-    text-decoration: none !important;
-}
-
-.table-title {
+.title-link:hover {
+    transform: scale(1.01) !important;
     font-weight: bold !important;
+    text-decoration: underline !important;
+}
+
+.card-title {
+    font-size: large;
 }

@@ -63,14 +63,17 @@
 }
 
 .cross-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
     border: none;
-    background-color: #ff0000;
-    border-radius: 50%;
-    padding: 8px;
+    background: transparent;
+    color: #db0f0f;
+    border-radius: 60%;
+    padding: 5px;
     cursor: pointer;
 }
 
 .cross-icon {
-    color: #ffffff;
+    color: #db0f0f;
 }
-  

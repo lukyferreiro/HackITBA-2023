@@ -177,13 +177,34 @@ export default function PlanCompleted() {
             ],
         }    
     ]
+
+    const [recipes,setRecipes] = useState(recipeList);
+
+    function removeRecipe(removedRecipe) {
+        setRecipes({recipes: recipes.filter(function(reciepe) { 
+            return reciepe !== removedRecipe
+        })});
+    }
+
+
+    function alterRecipe(removedRecipe,index){
+        
+        removeRecipe(removedRecipe)
+        const newRecipe = modifyMealPlan(data,index,recipes)
+        console.log( "Nueva receta: ")
+        console.log(newRecipe)
+        setRecipes(previousState => ({
+            recipes: [...previousState.recipes, newRecipe]
+        }))
+    }
+    
     
             
     return (
         <div>
             <div className="m-5 d-flex flex-wrap justify-content-center">
-                {recipeList.map((recipe) => (
-                    <CardRecipe recipe={recipe}/>
+                {recipeList.map((recipe,index) => (
+                    <CardRecipe recipe={recipe} alterRecipeFun={() => alterRecipe(recipe,index)}/>
                 ))}
             </div>
         </div>
