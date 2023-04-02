@@ -18,7 +18,7 @@ export default function ModalListIngredients(props) {
                 <div className="row w-100 h-100 p-2 m-0 align-items-center justify-content-center">
                     <div className="col-12">
                         <h5 className="text-center subtitle">
-                            Ingredientes - cantidad - unidad
+                            Ingredientes
                         </h5>
                         <div className=" d-flex justify-content-center">
                             <ul className="d-flex flex-column justify-content-right">

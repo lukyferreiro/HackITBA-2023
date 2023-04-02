@@ -20,7 +20,7 @@ export default function LandingPage() {
             <div className="m-5 p-5 d-flex flex-column justify-content-center text-center" style={{flex: "1"}}>
                 <div className="d-flex justify-content-center align-content-center">
                     <h2 style={{fontWeight: "600"}}>
-                        Crea un plan alimenticio adaptado a vos
+                        Crea un plan alimenticio personalizado
                     </h2>
                 </div>
                 <div style={{fontSize: "large"}}>
