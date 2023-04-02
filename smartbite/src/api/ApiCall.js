@@ -2,7 +2,7 @@ import recipeList from '../store/recipes'
 
 export const fetchData = async(prompt) => {
   try{
-  const openaiApiKey = process.env.CHATGPT_AI_KEY;
+  const openaiApiKey = "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";
   const response = await fetch('https://api.openai.com/v1/chat/completions', {
     method: 'POST',
     headers: {
@@ -36,7 +36,7 @@ export const fetchData = async(prompt) => {
 
 const fetchImg = async (prompt) => {
   try {
-    const apiKey = process.env.CHATGPT_AI_KEY;
+    const apiKey = "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";
     const response = await fetch(`https://api.openai.com/v1/images/generations`, {
       method: 'POST',
       headers: {

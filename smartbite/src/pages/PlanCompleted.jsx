@@ -101,8 +101,7 @@ export default function PlanCompleted() {
             flex: "1",
             overflowY: "auto"
         }}>
-            <div className="d-flex justify-content-end mx-2">
-                
+            <div className="d-flex justify-content-end p-4">
                 <button type="button" className="btn button-primary"
                         onClick={() => {isOpenModalPrice[1](true)}}>
                     Generar lista de ingredientes 
