@@ -1,11 +1,10 @@
-import {useEffect} from "react"
 import {Link} from 'react-router-dom'
+import { useState } from "react";
+import ModalFastRecipes from "../components/ModalFastRecipes";
 
 export default function LandingPage() {
 
-    useEffect(() => {
-        
-    }, [])
+    const isOpenModal = useState(false);
 
     return (
         <div className="m-5 d-flex justify-content-around align-items-stretch">
@@ -37,13 +36,14 @@ export default function LandingPage() {
                     Sabemos que a veces pensar una comida con los elementos disponibles puede ser complicado. Por eso si nos detallas que tenes en la heladera generamos una receta para vos, se acabo la perdida de tiempo
                 </div>
                 <div className="mt-5 d-flex justify-content-center">
-                    <Link to="/recetasRapidas">
-                        <button type="button" className="btn button-primary">
-                            Obtener receta
-                        </button>
-                    </Link>
+                    <button type="button" className="btn button-primary"
+                            onClick={() => {isOpenModal[1](true)}}>
+                        Obtener receta
+                    </button>
                 </div>
             </div>
+
+            <ModalFastRecipes isOpen={isOpenModal}/>
 
         </div>
     )

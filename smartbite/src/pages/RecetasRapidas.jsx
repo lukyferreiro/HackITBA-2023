@@ -1,9 +1,14 @@
 import {useEffect} from "react"
 import { useState } from "react"
-import { fetchData } from "../ApiCall"
+import { fetchData } from "../api/ApiCall"
+import { useLocation } from "react-router-dom"
+import CardRecipe from "../components/CardRecipe"
 
 export default function RecetasRapidas() {
-    
+
+    const location = useLocation()
+    const {data} = location.state
+
     const [comidas,setComidas]=useState({})
     const fastRecipePrompt=`Generar una receta paso por paso con ingredientes especificos.
 
@@ -13,7 +18,9 @@ export default function RecetasRapidas() {
     
     El resultado se devolvera como un objeto JSON que contiene un objeto "receta" con un arreglo de strings con las instrucciones.`
 
-    const getFastRecipe=(ingredientsList)=>{
+
+    //TODO hacer que tambien reciba data.cantRecipes
+    const getFastRecipe = (ingredientsList)=>{
         const customRecipe=fastRecipePrompt.replace('[lista de ingredientes]',ingredientsList)
         fetchData(customRecipe)
         .then(data=>{
@@ -28,14 +35,19 @@ export default function RecetasRapidas() {
             setComidas(JSON.parse(jsonStr));
         })
     }
+
+
     useEffect(() => {
-        
+        getFastRecipe(data.ingredientes)
     }, [])
 
     return (
-        <div className="m-5 d-flex justify-content-around align-items-stretch">
-            
-            
+        <div>
+            <div className="m-5 d-flex flex-wrap justify-content-center">
+                {comidas.map((recipe) => (
+                    <CardRecipe recipe={recipe} />
+                ))}
+            </div>
         </div>
     )
 

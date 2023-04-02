@@ -2,19 +2,21 @@
 import {useForm} from "react-hook-form";
 import data from '../store/data';
 import { useNavigate } from 'react-router-dom';
+import CheckboxGroup from './CheckboxGroup';
 
 
 export default function QuestionaryModal() {
     
     const navigate = useNavigate()
-    const {register, handleSubmit}= useForm({criteriaMode: "all"})
+    const {register, handleSubmit} = useForm({criteriaMode: "all"})
     
     const onSubmit = handleSubmit((data) => {
+        console.log(data)
         navigate("/completado", {state: {data}, replace: true})
     })
 
     return (
-        <div className="container-fluid px-5 mt-auto d-flex flex-column justify-content-center align-items-center font-weight-bold">
+        <div className="container-fluid mt-auto d-flex flex-column justify-content-center align-items-center font-weight-bold">
             <form id="planForm" acceptCharset="utf-8"
                   onSubmit={onSubmit} method="post">
                 {data.map((item) => (
@@ -30,16 +32,14 @@ export default function QuestionaryModal() {
                                         required: true,
                                     })}/>
                                 :
-                                <select className="form-select" required
-                                        {...register(item.id, {required: true})}
-                                >
-
-                                    {item.options.map((option) => (
-                                        <option key={option} value={option}>
-                                            {option}
-                                        </option>
-                                    ))}
-                                </select>
+                                    <select className="form-select" required
+                                    {...register(item.id, {required: true})}>
+                                        {item.options.map((option) => (
+                                            <option key={option} value={option}>
+                                                {option}
+                                            </option>
+                                        ))}
+                                    </select>                     
                             }
                         </div>
                     </div>
@@ -54,5 +54,5 @@ export default function QuestionaryModal() {
             </form>
 
         </div>
-    );
+    )
 }

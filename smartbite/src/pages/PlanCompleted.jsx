@@ -1,6 +1,6 @@
 import { useLocation } from "react-router-dom"
 import CardRecipe from "../components/CardRecipe"
-import { fetchData, fetchImg } from "..//api"
+import { fetchData, fetchImg } from "../api/ApiCall"
 import { useState } from "react"
 
 export default function PlanCompleted() {
