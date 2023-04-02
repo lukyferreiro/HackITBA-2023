@@ -5,47 +5,9 @@ import { useState } from "react";
 import { fetchData } from "../api/ApiCall";
 
 export default function ModalRecipe(props) {
-    const [ingredientes,setIngredientes]=useState([])
-    const [receta,setReceta]=useState([])
-    const [gotReceta,setGotReceta]=useState([])
-    const recetaPrompt=`Generar una receta detallada y una lista de ingredientes para una comida específica.
-
-    Ingresa el nombre de la comida: [nombre de la comida] 
     
-    Devuelve un objeto JSON que contenga:
-    - Un arreglo de strings "receta" que contenga las instrucciones detalladas para cocinar la comida paso a paso, excluyendo cualquier instrucción relacionada con precalentar el horno. En las instrucciónes relacionadas con hornear, incluir la temperatura necesaria.
-    - Un arreglo "ingredientes" que contenga los ingredientes necesarios para la receta, cada uno con los siguientes atributos:
-       - "nombre": nombre del ingrediente
-       - "unidad": unidad de medida del ingrediente (unidades, gramos, mililitros)
-       - "cantidad": cantidad de unidades de medida necesarios para la receta`
-    useEffect(()=>{
-        if(!gotReceta)
-            getReceta(props.recipe.nombre)
-    },[])
-    const getReceta=(nombre)=>{
-        let customReceta=recetaPrompt.replace('[nombre de la comida]',nombre)
-        // fetchData(customReceta)
-        // .then(data=>{
-        //     const message=data.choices[0].message.content
-        //     const start = message.indexOf('{');
-        //     const end = message.lastIndexOf('}');
-
-        //     // Extract the substring between these positions
-        //     const jsonStr = message.substring(start, end + 1);
-            
-        //     // Parse the JSON string into an object
-        //     const array=JSON.parse(jsonStr)
-        //     console.log(array)
-        //     console.log(ingredientes)
-        //     console.log(receta)
-
-        //     setIngredientes(array.ingredientes)
-        //     setReceta(array.receta)
-        //     setGotReceta(true)
-        // })
-    }
     return (
-        <Modal style={{overlay: {zIndex: 100}}}
+        <Modal appElement={document.getElementById('root')} style={{overlay: {zIndex: 100}}}
                className="modal-pop-up"
                isOpen={props.isOpen[0]}
                contentLabel="PopUpRecipe"
@@ -81,8 +43,8 @@ export default function ModalRecipe(props) {
                         </h5>
                         <div className=" d-flex justify-content-center">
                             <ul className="d-flex flex-column justify-content-right">
-                                {ingredientes&&
-                                (ingredientes.map((ingrediente) => (
+                                {props.ingredientes&&
+                                (props.ingredientes.map((ingrediente) => (
                                     <li style={{fontSize: "large"}}>
                                         {ingrediente.nombre} {ingrediente.cantidad} {ingrediente.unidad}
                                     </li>)
@@ -97,8 +59,8 @@ export default function ModalRecipe(props) {
                         </h5>
                         <div className=" d-flex justify-content-center">
                             <ul className="d-flex flex-column justify-content-right">
-                                {receta &&(
-                                receta.map((paso) => (
+                                {props.pasos &&(
+                                props.pasos.map((paso) => (
                                     <li style={{fontSize: "large"}}>
                                         {paso}
                                     </li>)
