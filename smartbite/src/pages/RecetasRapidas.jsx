@@ -4,6 +4,7 @@ import { fetchData } from "../api/ApiCall"
 import { useLocation } from "react-router-dom"
 import CardRecipe from "../components/CardRecipe"
 import recipeList from "../store/recipes"
+import image from "../img/background.png"; 
 
 export default function RecetasRapidas() {
 
@@ -43,7 +44,12 @@ export default function RecetasRapidas() {
     }, [])
 
     return (
-        <div>
+        <div style={{
+            backgroundImage:`url(${image})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            height: '100vh',
+        }}>
             <div className="m-5 d-flex flex-wrap justify-content-center">
                 {recipeList.map((recipe) => (
                     <CardRecipe recipe={recipe} />
