@@ -1,10 +1,6 @@
 import { useLocation } from "react-router-dom"
 import CardRecipe from "../components/CardRecipe"
-<<<<<<< HEAD
-import { fetchData, fetchImg } from "../api/ApiCall"
-import { useState } from "react"
-=======
-import { fetchData,fetchImg } from "../ApiCall"
+import { fetchData,fetchImg } from "../api/ApiCall"
 import { useEffect, useState } from "react"
 >>>>>>> 17bd26f775c8237a2dbc26b7b6685b674434fbb8
 
