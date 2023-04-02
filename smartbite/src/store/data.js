@@ -6,8 +6,6 @@ const data = [
     { id: '4', question: 'Sos alergico a los lacteos', options: ['Si','No'] , free: false },
     { id: '5', question: 'Sufris de hipertencion:', options: ['Si','No'] , free: false },
     { id: '6', question: 'Sufris de diabetis:', options: ['Si','No'] , free: false },
-    // { id: '7', question: 'Tiene 40 minutos libres para cocinar', options: ['Si', 'No'] , free: false },
-    // { id: '8', question: 'Alguna condicion especial  ', options: null , free: true },
   ];
 
 const days_equiv = [
