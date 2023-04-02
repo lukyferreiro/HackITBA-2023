@@ -12,7 +12,6 @@ export default function QuestionaryModal() {
     
     const onSubmit = handleSubmit((data) => {
         // fetchData(data)
-        console.log(data)
         navigate("/completado", {state: {data}, replace: true})
     })
 

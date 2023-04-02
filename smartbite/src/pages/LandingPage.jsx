@@ -3,9 +3,7 @@ import {Link} from 'react-router-dom'
 
 export default function LandingPage() {
 
-    useEffect(() => {
-        
-    }, [])
+    
 
     return (
         <div className="m-5 d-flex justify-content-around align-items-stretch">

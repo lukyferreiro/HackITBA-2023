@@ -27,9 +27,7 @@ export default function RecetasRapidas() {
             setComidas(JSON.parse(jsonStr));
         })
     }
-    useEffect(() => {
-        
-    }, [])
+
 
     return (
         <div className="m-5 d-flex justify-content-around align-items-stretch">
