@@ -1,21 +1,28 @@
 import {Link} from 'react-router-dom'
 import { useState } from "react";
 import ModalFastRecipes from "../components/ModalFastRecipes";
+import image from "../img/background.png"; 
 
 export default function LandingPage() {
 
     const isOpenModal = useState(false);
 
     return (
-        <div className="m-5 d-flex justify-content-around align-items-stretch">
+        <div className="d-flex justify-content-around align-items-stretch" style={{
+            backgroundImage:`url(${image})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            height: '100vh',
+        }}>
             <div className="m-5 p-5 d-flex flex-column justify-content-center text-center" style={{flex: "1"}}>
                 <div className="d-flex justify-content-center align-content-center">
-                    <h2 style={{fontWeight: "600", textDecoration: "underline"}}>
+                    <h2 style={{fontWeight: "600"}}>
                         Crea un plan alimenticio adaptado a vos
                     </h2>
                 </div>
-                <div>
-                    Responde un simple cuestionario y nosotros generamos un plan para tus tiempos, gustos y necesidades. Podes pedir un plan de 7 dias, 15 dias o un mes
+                <div style={{fontSize: "large"}}>
+                    Responde un simple cuestionario y nosotros generamos un plan para tus tiempos, gustos y necesidades.
+                    Podes pedir un plan de 7 dias, 15 dias o un mes
                 </div>
                 <div className="mt-5 d-flex justify-content-center">
                     <Link to="/plan">
@@ -28,12 +35,14 @@ export default function LandingPage() {
 
             <div className="m-5 p-5 d-flex flex-column justify-content-center text-center" style={{flex: "1"}}>
                 <div className="d-flex justify-content-center align-content-center">
-                    <h2 style={{fontWeight: "600", textDecoration: "underline"}}>
+                    <h2 style={{fontWeight: "600"}}>
                         Crea una receta con lo que tenes en la heladera
                     </h2>
                 </div>
-                <div>
-                    Sabemos que a veces pensar una comida con los elementos disponibles puede ser complicado. Por eso si nos detallas que tenes en la heladera generamos una receta para vos, se acabo la perdida de tiempo
+                <div style={{fontSize: "large"}}>
+                    Sabemos que a veces pensar una comida con los elementos disponibles puede ser complicado.
+                    Por eso si nos detallas que tenes en la heladera generamos una receta para vos, se acabo 
+                    la perdida de tiempo
                 </div>
                 <div className="mt-5 d-flex justify-content-center">
                     <button type="button" className="btn button-primary"

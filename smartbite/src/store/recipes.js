@@ -1,0 +1,68 @@
+ const recipeList = [ {
+    nombre: "Ensalada César con pollo a la parrilla",
+    tiempo: 25,
+    url: "https://www.clarin.com/img/2022/11/02/1z9K1zAwJ_360x240__1.jpg",
+    ingredientes: ["huevo", "jamon", "queso", "carne"],
+    pasos: [
+        "1. bla bla bla bla bla bla bla bla bla lasbdlasdaskdashuevo",
+        "2. bla bla bla bla bla bla bla bla bla lasbdlasdaskdashuevo", 
+        "3. bla bla bla bla bla bla bla bla bla lasbdlasdaskdashuevo",
+        "4. bla bla bla bla bla bla bla bla bla lasbdlasdaskdashuevo",
+        "5. bla bla bla bla bla bla bla bla bla lasbdlasdaskdashuevo",
+        "6. bla bla bla bla bla bla bla bla bla lasbdlasdaskdashuevo",
+        "7. bla bla bla bla bla bla bla bla bla lasbdlasdaskdashuevo",
+        "8. bla bla bla bla bla bla bla bla bla lasbdlasdaskdashuevo",
+    ],
+},
+{
+    nombre: "Salmón a la parrilla con verduras asadas",
+    tiempo: 30,
+    url: "https://www.clarin.com/img/2022/11/02/1z9K1zAwJ_360x240__1.jpg",
+    ingredientes: ["huevo", "jamon", "queso", "carne"],
+    pasos: [
+        "1. bla bla bla bla bla bla bla bla bla lasbdlasdaskdashuevo",
+        "2. bla bla bla bla bla bla bla bla bla lasbdlasdaskdashuevo", 
+        "3. bla bla bla bla bla bla bla bla bla lasbdlasdaskdashuevo",
+        "4. bla bla bla bla bla bla bla bla bla lasbdlasdaskdashuevo",
+        "5. bla bla bla bla bla bla bla bla bla lasbdlasdaskdashuevo",
+        "6. bla bla bla bla bla bla bla bla bla lasbdlasdaskdashuevo",
+        "7. bla bla bla bla bla bla bla bla bla lasbdlasdaskdashuevo",
+        "8. bla bla bla bla bla bla bla bla bla lasbdlasdaskdashuevo",
+    ],
+},
+{
+    nombre: "Tacos de camarones con salsa de aguacate",
+    tiempo: 25,
+    url: "https://www.clarin.com/img/2022/11/02/1z9K1zAwJ_360x240__1.jpg",
+    ingredientes: ["huevo", "jamon", "queso", "carne"],
+    pasos: [
+        "1. bla bla bla bla bla bla bla bla bla lasbdlasdaskdashuevo",
+        "2. bla bla bla bla bla bla bla bla bla lasbdlasdaskdashuevo", 
+        "3. bla bla bla bla bla bla bla bla bla lasbdlasdaskdashuevo",
+        "4. bla bla bla bla bla bla bla bla bla lasbdlasdaskdashuevo",
+        "5. bla bla bla bla bla bla bla bla bla lasbdlasdaskdashuevo",
+        "6. bla bla bla bla bla bla bla bla bla lasbdlasdaskdashuevo",
+        "7. bla bla bla bla bla bla bla bla bla lasbdlasdaskdashuevo",
+        "8. bla bla bla bla bla bla bla bla bla lasbdlasdaskdashuevo",
+    ],
+},
+{
+    nombre: "Chuletas de cerdo a la parrilla con ensalada de col",
+    tiempo: 25,
+    url: "https://www.clarin.com/img/2022/11/02/1z9K1zAwJ_360x240__1.jpg",
+    ingredientes: ["huevo", "jamon", "queso", "carne"],
+    pasos: [
+        "1. bla bla bla bla bla bla bla bla bla lasbdlasdaskdashuevo",
+        "2. bla bla bla bla bla bla bla bla bla lasbdlasdaskdashuevo", 
+        "3. bla bla bla bla bla bla bla bla bla lasbdlasdaskdashuevo",
+        "4. bla bla bla bla bla bla bla bla bla lasbdlasdaskdashuevo",
+        "5. bla bla bla bla bla bla bla bla bla lasbdlasdaskdashuevo",
+        "6. bla bla bla bla bla bla bla bla bla lasbdlasdaskdashuevo",
+        "7. bla bla bla bla bla bla bla bla bla lasbdlasdaskdashuevo",
+        "8. bla bla bla bla bla bla bla bla bla lasbdlasdaskdashuevo",
+    ],
+},
+
+]
+
+export default recipeList;

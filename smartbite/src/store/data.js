@@ -9,5 +9,6 @@ const data = [
     { id: '7', question: 'Tiene 40 minutos libres para cocinar', options: ['Si', 'No'] , free: false },
     { id: '8', question: 'Alguna condicion especial  ', options: null , free: true },
   ];
-  
+
+
 export default data;

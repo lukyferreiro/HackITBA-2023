@@ -1,7 +1,6 @@
 import Modal from "react-modal";
 import React from "react";
 
-
 export default function ModalRecipe(props) {
 
     return (

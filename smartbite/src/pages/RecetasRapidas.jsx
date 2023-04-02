@@ -3,6 +3,7 @@ import { useState } from "react"
 import { fetchData } from "../api/ApiCall"
 import { useLocation } from "react-router-dom"
 import CardRecipe from "../components/CardRecipe"
+import recipeList from "../store/recipes"
 
 export default function RecetasRapidas() {
 
@@ -44,7 +45,7 @@ export default function RecetasRapidas() {
     return (
         <div>
             <div className="m-5 d-flex flex-wrap justify-content-center">
-                {comidas.map((recipe) => (
+                {recipeList.map((recipe) => (
                     <CardRecipe recipe={recipe} />
                 ))}
             </div>

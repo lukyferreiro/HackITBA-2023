@@ -77,3 +77,9 @@
 .cross-icon {
     color: #db0f0f;
 }
+
+.fondo {
+    background-size: cover;
+    background-position: 'center';
+    height: '100vh';
+}
