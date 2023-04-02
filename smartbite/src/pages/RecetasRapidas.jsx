@@ -12,7 +12,7 @@ export default function RecetasRapidas() {
     const {data} = location.state
 
     const [recipe,setRecipe]=useState([])
-    const fastRecipePrompt=`Generar instrucciones detalladas para preparar un plato con una lista de ingredientes dada. El plato debe contener al menos uno de los ingredientes proporcionados. Las instrucciones deben ser detalladas y fáciles de seguir, y no deben incluir instrucciones sobre precalentar el horno. Si el plato requiere hornear algún ingrediente, incluir la temperatura en grados Celsius.
+    const fastRecipePrompt=`Generar instrucciones detalladas para preparar un plato con una lista de ingredientes dada. El plato debe contener con algunos de los ingredientes proporcionados. Las instrucciones deben ser detalladas y fáciles de seguir, y no deben incluir instrucciones sobre precalentar el horno. Si el plato requiere hornear algún ingrediente, incluir la temperatura en grados Celsius.
         La respuesta solo sera un archivo json llamado comida que tendra dentro dos objetos, uno llamado instrucciones que es un array de strings con las instrucciones paso a paso, y el otro llamado nombre con el nombre del plato
     Por favor ingresa una lista de ingredientes separados por comas:[lista de ingredientes]`
     const photoPrompt=`Genera una foto realista de un plato de [food],buena iluminacion,jugoso`
@@ -34,7 +34,7 @@ export default function RecetasRapidas() {
             const array=JSON.parse(jsonStr);
             setRecipe(prevRecipe => [...prevRecipe, array.instrucciones]);
             setRecipe(prevRecipe => [...prevRecipe, array.nombre]);
-            const customFood=photoPrompt.replace('[food]',recipe[1])
+            const customFood=photoPrompt.replace('[food]',array.nombre)
                 fetchImg(customFood)
                 .then(data=>{
                     setRecipe(prevRecipe => [...prevRecipe, data.data[0].url])}) 
