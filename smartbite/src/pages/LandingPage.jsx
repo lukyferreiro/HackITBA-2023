@@ -4,7 +4,11 @@ import ModalFastRecipes from "../components/ModalFastRecipes";
 
 export default function LandingPage() {
 
+<<<<<<< HEAD
     const isOpenModal = useState(false);
+=======
+    
+>>>>>>> 17bd26f775c8237a2dbc26b7b6685b674434fbb8
 
     return (
         <div className="m-5 d-flex justify-content-around align-items-stretch">

@@ -1,7 +1,7 @@
 export const fetchData = async(prompt) => {
   try{
-  const openaiApiKey = "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";
-  const response = await fetch('https://api.openai.com/v1/chat', {
+  const openaiApiKey = "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";
+  const response = await fetch('https://api.openai.com/v1/chat/completions', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -33,7 +33,7 @@ export const fetchData = async(prompt) => {
 
 const fetchImg = async (prompt) => {
   try {
-    const apiKey = "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";
+    const apiKey = "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";
     const response = await fetch(`https://api.openai.com/v1/images/generations`, {
       method: 'POST',
       headers: {
@@ -49,7 +49,7 @@ const fetchImg = async (prompt) => {
       })
     });
     const data = await response.json();
-    return data.data[0].url;
+    return data;
   } catch (error) {
     console.log(error);
   }

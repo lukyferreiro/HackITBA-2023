@@ -36,10 +36,13 @@ export default function RecetasRapidas() {
         })
     }
 
+<<<<<<< HEAD
 
     useEffect(() => {
         getFastRecipe(data.ingredientes)
     }, [])
+=======
+>>>>>>> 17bd26f775c8237a2dbc26b7b6685b674434fbb8
 
     return (
         <div>
