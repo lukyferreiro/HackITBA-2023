@@ -1,12 +1,13 @@
 import { useLocation } from "react-router-dom"
 import CardRecipe from "../components/CardRecipe"
-import { fetchData,fetchImg } from "../ApiCall"
+import { fetchData, fetchImg } from "..//api"
 import { useState } from "react"
 
 export default function PlanCompleted() {
 
     const location = useLocation()
     const {data} = location.state
+
     //const recipeList = getRecipe(data)
     const [comidas, setComidas] = useState({})
     const photoPrompt=`Genera una foto realista de un plato de [food],buena iluminacion,jugoso`
