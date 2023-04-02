@@ -1,7 +1,6 @@
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import LandingPage from "./pages/LandingPage";
-import PlanForm from "./pages/PlanForm";
 import PlanCompleted from "./pages/PlanCompleted";
 import Home from "./pages/Home";
 import RecetasRapidas from "./pages/RecetasRapidas";
