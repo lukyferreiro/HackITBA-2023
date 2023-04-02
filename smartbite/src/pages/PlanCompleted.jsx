@@ -11,8 +11,9 @@ export default function PlanCompleted() {
     const [comidas, setComidas] = useState([])
     const[gotPlans,isGotPlans]=useState(false)
     const [change,isChange]=useState(true)
+    const [compras,setCompras]=useState([])
     const photoPrompt=`Genera una foto realista de un plato de [food],buena iluminacion,jugoso`
-    const mealPlanPrompt=`Generar planes de cenas deliciosos y bajos en calorias para personas con sobrepeso que quieren reducir peso.\n\n  Preferencias del usuario:\n\n  - Desagrados: [desagrados]\n    \n  Generar un plan de cenas para 7 días, incluyendo una variedad de comidas deliciosas, jugosas y bajas en calorías. Evitar sugerir comidas que el usuario no ha disfrutado en el pasado. El plan de comidas debe ser diverso, incluir múltiples grupos alimentarios y proporcionar al usuario una dieta equilibrada.\n  \n  Si alguna de las comidas es seca, como una ensalada, arroz o quinoa se incluirá en el nombre de la comida una salsa o aderezo delicioso.\n  \n  El resultado se devolverá como un objeto JSON llamado comida que contiene una lista de comidas, cada una con un atributo \"nombre\", un atributo \"tiempo\" que indica el tiempo aproximado que tomara preparar la comida en minutos , un atributo "dia" que indica para que dia de la semana esta pensado ese plato, del 1 al 7 y un atributo url vacio.`
+    const mealPlanPrompt=`Generar planes de cenas deliciosos y bajos en calorias para personas con sobrepeso que quieren reducir peso.\n\n  Preferencias del usuario:\n\n  - Desagrados: [desagrados]\n    \n  Generar un plan de cenas para 7 días, incluyendo una variedad de comidas deliciosas, jugosas y bajas en calorías. Evitar sugerir comidas que el usuario no ha disfrutado en el pasado. El plan de comidas debe ser diverso, incluir múltiples grupos alimentarios y proporcionar al usuario una dieta equilibrada.\n  \n  Si alguna de las comidas es seca, como una ensalada, arroz o quinoa se incluirá en el nombre de la comida una salsa o aderezo delicioso.\n  \n  El resultado se devolverá como un arreglo con dos objetos JSON, uno llamado comida que contiene una lista de comidas, cada una con un atributo \"nombre\", un atributo \"tiempo\" que indica el tiempo aproximado que tomara preparar la comida en minutos , un atributo "dia" que indica para que dia de la semana esta pensado ese plato, del 1 al 7 y un atributo url vacio. El otro objeto se llamara compras y sera un arreglo de los ingredientes necesarios para realizar todas las comidas. Cada ingrediente tendra un atributo llamado "nombre" otro llamado "unidad" que tendra la medida con la que se mide el ingrediente(gramos,mililitros,unidades,etc) y otro atributo llamado cantidad`
     const modifyPlanPrompt=`Modificar plan de comidas:
 
     Plan de comidas actual:[plan de comidas]
@@ -41,6 +42,9 @@ export default function PlanCompleted() {
             setComidas(array.comida)
             isChange(!change)
             isGotPlans(true)
+            setCompras(array.compras)
+
+            console.log(array.compras)
         })
         .
         catch(e=>{
@@ -65,6 +69,7 @@ export default function PlanCompleted() {
             // Parse the JSON string into an object
             const obj=JSON.parse(jsonStr)
             setComidas(obj.comida)
+            
         }).
         catch(e=>{
             console.log(e)
@@ -93,7 +98,7 @@ export default function PlanCompleted() {
     return (
         <div>
             <div className="m-5 d-flex flex-wrap justify-content-center">
-                {comidas.length>0 &&(
+                {comidas &&(
                     comidas.map(comida => (
                         <CardRecipe recipe={comida} key={comida.dia} />
                     ))

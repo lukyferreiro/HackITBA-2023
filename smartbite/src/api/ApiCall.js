@@ -1,6 +1,6 @@
 export const fetchData = async(prompt) => {
   try{
-  const openaiApiKey = "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";
+  const openaiApiKey = "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";
   const response = await fetch('https://api.openai.com/v1/chat/completions', {
     method: 'POST',
     headers: {
@@ -33,7 +33,7 @@ export const fetchData = async(prompt) => {
 
 const fetchImg = async (prompt) => {
   try {
-    const apiKey = "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";
+    const apiKey = "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";
     const response = await fetch(`https://api.openai.com/v1/images/generations`, {
       method: 'POST',
       headers: {

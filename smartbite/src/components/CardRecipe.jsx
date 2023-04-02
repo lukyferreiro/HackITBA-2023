@@ -12,7 +12,7 @@ export default function CardRecipe(props) {
             <div className="card card-receipe mx-3 my-2 p-0">
                 <div className="card-link h-100 d-flex flex-column">
                     <div>
-                        <button className="cross-btn" onClick={() => props.alterRecipeFun(props.recipe,props.index)}>
+                        <button className="cross-btn" onClick={() => props.alterRecipeFun(props.recipe,props.recipe.dia)}>
                             <FontAwesomeIcon icon={faTimes} className="cross-icon" />
                         </button>
                         <img className={`card-img-top container-fluid p-0 mw-100`} 
