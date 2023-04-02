@@ -17,3 +17,13 @@
 .card-title {
     font-size: large;
 }
+
+.card-receipe-info {
+    width: 450px !important;
+    height: 560px !important;
+}
+
+.card-img-top-info {
+    width: 100% !important;
+    height: 200px !important;
+}
