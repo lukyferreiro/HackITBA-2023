@@ -6,6 +6,7 @@ import recipeList from "../store/recipes"
 import ModalListIngredients from "../components/ModalListIngredients"
 import image from "../img/background.png"; 
 import { useEffect } from "react"
+import misConst from "../store/data";
 
 export default function PlanCompleted() {
 
@@ -97,7 +98,8 @@ export default function PlanCompleted() {
             backgroundImage:`url(${image})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
-            height: '100vh',
+            flex: "1",
+            overflowY: "auto"
         }}>
             <div className="d-flex justify-content-end mx-2">
                 
@@ -108,14 +110,21 @@ export default function PlanCompleted() {
             </div>
             <div className="m-5 d-flex flex-wrap justify-content-center">
                 
-                
-                {comidas.map((recipe) => (
-                    <CardRecipe recipe={recipe} key={recipe.dia} alterRecipeFun={ ()=>{modifyMealPlan(recipe.dia,comidas,"","")}} comidas={recipe} dia={recipe.dia}/>
+                {
+                comidas.map((recipe,index) => (
+                    <div className="d-flex justify content-center">
+                        <h2 className="text-center">
+                            {misConst.days_equiv[index].day}
+                        </h2> 
+                        <CardRecipe recipe={recipe} key={recipe.dia} />
+                    </div>
+                    
                 ))}
                 
-                    <ModalListIngredients isOpen={isOpenModalPrice} compras={compras} />
+                    <ModalListIngredients isOpen={isOpenModalPrice} compras={compras}/>
                 
             </div>
+            
         </div>
         
     )

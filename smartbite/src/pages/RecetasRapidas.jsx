@@ -47,7 +47,8 @@ export default function RecetasRapidas() {
             backgroundImage:`url(${image})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
-            height: '100vh',
+            flex: "1",
+            overflowY: "auto"
         }}>
             <div className="m-5 d-flex flex-wrap justify-content-center">
                 {recipe.length>0 &&(

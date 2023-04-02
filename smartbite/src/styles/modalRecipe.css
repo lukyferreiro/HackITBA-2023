@@ -3,12 +3,22 @@
     border-radius: 20px;
     border: 1px solid var(--fifth-color);
     background-color: whitesmoke;
-    margin: 10% 25%;
+    margin: 15% 25%;
     max-height: 90vh;
     overflow-x: auto;
 }
 
 .modal-pop-up {
+    width: 50%;
+    border-radius: 20px;
+    border: 1px solid var(--fifth-color);
+    background-color: whitesmoke;
+    margin: 2.5% 25%;
+    max-height: 90vh;
+    overflow-x: auto;
+}
+
+.modal-pop-up-plan {
     width: 50%;
     border-radius: 20px;
     border: 1px solid var(--fifth-color);

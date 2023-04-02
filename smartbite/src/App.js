@@ -1,7 +1,6 @@
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import LandingPage from "./pages/LandingPage";
-import PlanForm from "./pages/PlanForm";
 import PlanCompleted from "./pages/PlanCompleted";
 import Home from "./pages/Home";
 import RecetasRapidas from "./pages/RecetasRapidas";
@@ -15,8 +14,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Home/>}>
             <Route index element={<LandingPage/>}/>
-            <Route path='/plan' element={<PlanForm/>}/>
-            <Route path='/completado' element={<PlanCompleted/>}/>
+            <Route path='/plan' element={<PlanCompleted/>}/>
             <Route path='/recetasRapidas' element={<RecetasRapidas/>}/>
           </Route>
         </Routes>

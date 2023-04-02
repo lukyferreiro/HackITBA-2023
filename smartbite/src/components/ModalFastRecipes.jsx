@@ -26,17 +26,9 @@ export default function ModalFastRecipes(props) {
             <div className="container-fluid p-0 my-auto h-auto w-100 d-flex justify-content-center align-items-center">
                 <div className="row w-100 h-100 p-2 m-0 align-items-center justify-content-center">
                     <form id="fastRecipesForm" acceptCharset="utf-8"onSubmit={onSubmit} method="post">
-                        <div className="col-12">
-                            <h2 className="text-center title">
-                                Cantidad de recetas a generar
-                            </h2>
-                            <input type="number" min="0" max="9999999"
-                                className="form-control"placeholder="0"
-                                {...register("cantRecipes", {required: false})}/>
-                        </div>
                         
                         <div className="col-12">
-                            <h2 className="text-center title">
+                            <h2 className="text-center title mt-3">
                                 Ingredientes
                             </h2>
                             <p className="text-center">
