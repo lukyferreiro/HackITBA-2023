@@ -2,10 +2,10 @@
 
 ## Autores
 
-- [Patricio Escudeiro] (https://github.com/pescudeiro)
-- [Lucas Agustin Ferreiro] (https://github.com/lukyferreiro)
-- [Mateo Perez Rivera] (https://github.com/mateoperezrivera)
-- [Ian Szejer] (https://github.com/IanSzejer)
+- [Patricio Escudeiro](https://github.com/pescudeiro)
+- [Lucas Agustin Ferreiro](https://github.com/lukyferreiro)
+- [Mateo Perez Rivera](https://github.com/mateoperezrivera)
+- [Ian Szejer](https://github.com/IanSzejer)
 
 ### Propuesta
 
